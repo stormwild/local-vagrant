@@ -109,3 +109,13 @@ systemctl status mysql
 sudo mysql_secure_installation
 
 # root / root
+
+# Install git
+
+# Install Composer
+
+# Install Nvm/Node
+
+# Install Rvm/Ruby
+
+# Install Python
