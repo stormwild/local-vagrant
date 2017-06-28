@@ -40,6 +40,26 @@ ubuntu@ubuntu-xenial:~$ composer
 Composer version 1.4.2 2017-05-17 08:17:52
 ```
 
+# Test for HTTPS
+
+```bash
+ubuntu@ubuntu-xenial:~$ netstat -tap | grep https
+(Not all processes could be identified, non-owned process info
+ will not be shown, you would have to be root to see it all.)
+tcp6       0      0 [::]:https              [::]:*                  LISTEN      -
+```
+
+# Enable stormwild.org.local
+
+```bash
+sudo cp /vagrant/vhosts/stormwild.org.local.conf /etc/apache2/sites-available/
+
+sudo a2ensite stormwild.org.local.conf
+
+echo "127.0.0.1 stormwild.org.local" | sudo tee -a /etc/hosts
+
+sudo systemctl restart apache2
+```
 
 # References
 

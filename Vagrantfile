@@ -70,5 +70,16 @@ Vagrant.configure(2) do |config|
   # SHELL
 
   # config.vm.provision "shell", path: "provision.sh"
-  config.vm.network "forwarded_port", guest: 80, host: 8080
+
+  # Forward ports
+  config.vm.network "forwarded_port", guest: 80, host: 80
+  config.vm.network "forwarded_port", guest: 443, host: 443
+
+  # Mount synced folders
+  config.vm.synced_folder "../stormwild-org", "/srv/stormwild-org",
+      id: "stormwild-org",
+      owner: "ubuntu",
+      group: "www-data",
+      mount_options: ["dmode=775,fmode=664"]
 end
+
