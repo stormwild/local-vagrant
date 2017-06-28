@@ -24,3 +24,7 @@ Homestead.json
 
 # Vagrant
 .vagrant
+
+# Ubuntu log
+
+ubuntu-xenial-16.04-cloudimg-console.log

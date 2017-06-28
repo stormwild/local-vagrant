@@ -112,9 +112,60 @@ sudo mysql_secure_installation
 
 # Install git
 
-# Install Composer
+sudo apt-get update
+
+sudo apt-get install git
+
+git config --global user.name "Alexander R Torrijos"
+git config --global user.email "artorrijos@gmail.com"
+
 
 # Install Nvm/Node
+
+sudo apt-get update
+
+sudo apt-get -y install build-essential libssl-dev
+
+curl https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
+
+source .profile
+
+# Confirm nvm exists
+# Note which nvm will not work since nvm is a sourced shell function not an executable binary
+
+command -v nvm
+
+# Install node
+
+nvm install node
+
+# v8.1.2
+
+node -v
+
+# 5.0.3
+
+npm -v
+
+# Install yarn globally as well
+
+npm install -g yarn
+
+# Check Yarn
+
+yarn -v
+
+# yarn install v0.24.5
+
+# List global packages
+
+npm list -g --depth=0
+
+
+# Install Composer
+
+curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
+
 
 # Install Rvm/Ruby
 
